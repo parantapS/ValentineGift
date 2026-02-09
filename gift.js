@@ -6,7 +6,7 @@ const container = document.querySelector(".container");
 const letterText = `
 My bebe,
 
-You are my favorite part of every day.
+You are my favorite part of every day. Everything is better when you are with me.
 I love the way you laugh, care, and make life so bright.
 
 Thank you for choosing me.
