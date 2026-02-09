@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Valentine 💖</title>
+  <link rel="stylesheet" href="gift.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>For You 💌</h1>
+  <p class="hint">Click the envelope to open your card</p>
+
+  <div class="envelope-container">
+    <div class="envelope" id="envelope">
+      <div class="flap"></div>
+      <div class="back"></div>
+    </div>
+
+    <div class="card" id="card">
+      <p id="typed-text"></p>
+      <button id="gift-btn" class="hidden" onclick="showGift()">🎁 Reveal Your Gift</button>
+    </div>
+  </div>
+</div>
+
+<script src="gift.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will You Be My Valentine?</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #ffe6f0;
+      font-family: Georgia, serif;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+    }
+
+    button {
+      padding: 16px 32px;
+      font-size: 20px;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    .no {
+      background: #ccc;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <h1>Will you be my Valentine? ❤️</h1>
+  <div class="buttons">
+    <button id="btn1" class="yes">Yes</button>
+    <button id="btn2" class="no">No</button>
+  </div>
+
+  <script>
+    const btn1 = document.getElementById("btn1");
+    const btn2 = document.getElementById("btn2");
+
+    // Swap labels when hovering over the No button
+    function swapLabels() {
+      const tempText = btn1.textContent;
+      btn1.textContent = btn2.textContent;
+      btn2.textContent = tempText;
+
+      // Swap classes so colors match labels
+      btn1.classList.toggle("yes");
+      btn1.classList.toggle("no");
+      btn2.classList.toggle("yes");
+      btn2.classList.toggle("no");
+    }
+
+    // Detect hovering over the No button (whichever it is visually)
+    btn1.addEventListener("mouseover", () => {
+      if (btn1.textContent === "No") swapLabels();
+    });
+    btn2.addEventListener("mouseover", () => {
+      if (btn2.textContent === "No") swapLabels();
+    });
+
+    // Clicks always go to yes.html
+    btn1.addEventListener("click", () => {
+      window.location.href = "yes.html";
+    });
+    btn2.addEventListener("click", () => {
+      window.location.href = "yes.html";
+    });
+  </script>
+</body>
+</html>

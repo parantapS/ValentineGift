@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Great Choice 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #ffe6f0;
+      font-family: Georgia, serif;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      max-width: 600px;
+      z-index: 2;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      font-size: 34px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 20px;
+      margin-bottom: 40px;
+      line-height: 1.4;
+    }
+
+    button {
+      padding: 16px 36px;
+      font-size: 20px;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      background: #ff4d6d;
+      color: white;
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.08);
+    }
+
+    /* Subtle sparkles */
+    .spark {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #ff4d6d;
+      border-radius: 50%;
+      animation: float 4s linear forwards;
+      opacity: 0.7;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-200px) scale(0);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Great choice 💖</h1>
+    <img src="assets/thumbs_up.gif" alt="Couple Massage">
+    <p id="message">
+      You picked the right answer — honestly, the best one.
+      <br><br>
+      Ready to see what happens next?
+    </p>
+
+    <button id="playBtn">Yes, let’s play 🎮</button>
+  </div>
+
+  <script>
+    const playBtn = document.getElementById("playBtn");
+
+    playBtn.addEventListener("click", () => {
+      window.location.href = "minesweeper.html";
+    });
+
+    // subtle sparkles
+    setInterval(() => {
+      const spark = document.createElement("div");
+      spark.className = "spark";
+      spark.style.left = Math.random() * window.innerWidth + "px";
+      spark.style.top = window.innerHeight + "px";
+      document.body.appendChild(spark);
+
+      setTimeout(() => spark.remove(), 4000);
+    }, 500);
+  </script>
+
+</body>
+</html>
